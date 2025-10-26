@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  pod-manager:
+    build: .
+    container_name: pod-manager-controller
+    volumes:
+      # Mount Docker socket to allow container management
+      - /var/run/docker.sock:/var/run/docker.sock
+      # Mount configuration directory
+      - ./examples:/config
+    environment:
+      - DEPLOYMENT_CONFIG=/config/deployments.json
+    restart: unless-stopped

@@ -8,7 +8,7 @@ echo ""
 
 # Build the image if needed
 echo "1. Building pod-manager image..."
-docker build -t pod-manager:latest . -q
+docker build -t pod-manager:latest . > /dev/null 2>&1 || docker build -t pod-manager:latest .
 
 # Verify the image exists
 echo "✓ Image built successfully"

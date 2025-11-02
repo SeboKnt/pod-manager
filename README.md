@@ -1,4 +1,4 @@
-# Pod Manager
+# PodManager
 
 A simple controller container that demonstrates how easy it is to build a container that deploys and manages new containers.
 
